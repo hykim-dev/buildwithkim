@@ -1,0 +1,89 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 progress-bar css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-counter{
+    &-area{
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 18%, rgba(255, 255, 255, 0) 34%),
+            radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 30%),
+            radial-gradient(circle at 82% 18%, rgba(214, 218, 224, 0.08) 0%, rgba(214, 218, 224, 0) 26%),
+            linear-gradient(140deg, #020202 0%, #111214 28%, #2d3035 50%, #111214 72%, #030303 100%);
+
+        &::before,
+        &::after{
+            position: absolute;
+            content: "";
+            border-radius: 999px;
+            filter: blur(90px);
+            opacity: 0.9;
+            z-index: -1;
+        }
+
+        &::before{
+            top: 8%;
+            left: -4%;
+            width: 320px;
+            height: 320px;
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        &::after{
+            right: 4%;
+            bottom: 10%;
+            width: 360px;
+            height: 360px;
+            background: rgba(190, 197, 206, 0.08);
+        }
+
+        & .container{
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &-item{
+        position: relative;
+        border-radius: 20px;
+        backdrop-filter: blur(40px);
+        background: linear-gradient(209deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+        padding: 60px 60px 37px 60px;
+        @media #{$lg,$md,$sm,$xs}{
+            padding: 30px 30px 27px 30px;
+        }
+    }
+    &-tittle{
+        font-weight: 500;
+        font-size: 80px;
+        line-height: 81%;
+        letter-spacing: -0.03em;
+        color: var(--tp-common-white);
+    }
+    &-subtittle{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 167%;
+        letter-spacing: -0.02em;
+        color: var(--tp-common-white);
+    }
+    &-para{
+        line-height: 162%;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    &-spacing{
+        padding-top: 274px;
+        padding-bottom: 274px;
+        @media #{$lg,$md,$sm,}{
+            padding-top: 180px;
+            padding-bottom: 150px;
+        }
+        @media #{$xs}{
+            padding-top: 140px;
+            padding-bottom: 110px;
+        }
+    }
+}
