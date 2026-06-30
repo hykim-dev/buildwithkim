@@ -62,6 +62,13 @@
     & .tp-hero-bigtext h2 {
         color: var(--tp-common-white);
     }
+    & .tp-hero-profile-text {
+        filter: invert(1);
+    }
+    & .tp-hero-profile-image {
+        background: linear-gradient(180deg, #2b2b2f 0%, #1d1d1f 100%);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
     & .reveal-text .char {
         color: #a8a8a8;
     }

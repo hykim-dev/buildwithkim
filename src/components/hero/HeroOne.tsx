@@ -1,4 +1,5 @@
 import { heroSkillTags, profile } from '@/data/profileData';
+import { TextCircleIcon } from '@/svg';
 import Image from 'next/image';
 
 const HeroOne = () => {
@@ -18,14 +19,23 @@ const HeroOne = () => {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="tp-hero-video text-lg-end mb-30">
-                                <Image
-                                    width={640}
-                                    height={640}
-                                    className="w-100 h-auto rounded-4"
-                                    src={profile.heroImage}
-                                    alt={profile.displayName}
-                                />
+                            <div className="tp-hero-video tp-hero-profile text-lg-end mb-30">
+                                <div className="tp-hero-profile-ring">
+                                    <span className="tp-hero-profile-text tp-live-anim-spin" aria-hidden="true">
+                                        <TextCircleIcon />
+                                    </span>
+                                    <div className="tp-hero-profile-image">
+                                        <Image
+                                            width={640}
+                                            height={640}
+                                            className="w-100 h-100"
+                                            src={profile.heroImage}
+                                            alt={profile.displayName}
+                                            priority
+                                            sizes="(max-width: 991px) 80vw, 40vw"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="col-12">

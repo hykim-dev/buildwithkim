@@ -11,6 +11,10 @@ import "./globals.scss";
 export const metadata: Metadata = {
   title: `${profile.displayName} | ${profile.title}`,
   description: profile.subtitle,
+  icons: {
+    icon: [{ url: "/site-logo-favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/site-logo-favicon.svg"],
+  },
 };
 
 export default function RootLayout({
